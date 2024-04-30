@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <!-- these tags are called jinja tags -->
+    <form method="post">
+        {% csrf_token %} <!-- secured communication -->
+        {% for field in form %}
+            <div class="input-field">
+                <div class="label"> 
+                    <label>
+                        {{ field.label }} <!-- text for each field -->
+                    </label>
+                </div>
+                <div class="field">
+                    {{ field }} <!-- hold the widget/ field -->
+                </div>
+            </div>
+        {% endfor %}
+        <button>submit</button>
+    </form>
+    
+    
+</body>
+</html>
